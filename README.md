@@ -18,7 +18,7 @@ docker build -t group-project-api .
 
 To run that docker image:
 ```bash
-docker run -it group-project-api
+docker run -p 3000:3000 -it group-project-api
 ```
 
 ## Making requests to the server
