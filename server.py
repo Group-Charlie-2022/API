@@ -24,13 +24,13 @@ def disconnect(sid):
 @socketio.on("question")
 def question_socket(data):
     print(f"Question asked via socket: \"{data}\"")
-    emit("answer", answer_question(data))
+    emit("answer", answer_question(data, None))
 
 @app.route("/question", methods=["GET"])
 def question_http():
     q = request.args.get("q")
     print(f"Question asked via http: \"{q}\"")
-    return answer_question(q)
+    return answer_question(q, None)
 
 if __name__ == '__main__':
       app.run(host='0.0.0.0', port=3000)
