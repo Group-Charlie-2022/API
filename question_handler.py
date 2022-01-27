@@ -9,10 +9,10 @@ def answer_question(question, session_id):
 
     if question_type == CHAT:
         response = get_chatty_response(question, history)
-    
+
     elif question_type == SYMPTOM_CHECK:
         response = get_symptom_checker_response(question, history)
-    
+
     # etc...
 
     else:
@@ -25,18 +25,19 @@ def answer_question(question, session_id):
 
     return empathize(question_type, response)
 
+
 def get_symptom_checker_response(question, history):
     # Get a list of all of the symptoms the user has, based on everything they've said so far
     symptoms = []
     for i in history + [question]:
         if (s := get_symptom(i)) is not None:
             symptoms.append(s)
-    
+
     # Determine what followup question is necessary if any, or otherwise determine a final response
     # The "assess_symptoms" function could call an external API or use some graph algorithm in the configurable database
     followup, diagnosis = assess_symptoms(symptoms)
-    
+
     if diagnosis is None:
         return followup
-    
+
     return diagnosis
