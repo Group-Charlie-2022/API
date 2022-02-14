@@ -1,7 +1,9 @@
 from interface import Routine
 import openai
+import os
 
-openai.api_key = open("secret/openai_key").read().strip()
+
+openai.api_key = os.getenv("OPENAI_KEY")
 
 class Conversational(Routine):
     

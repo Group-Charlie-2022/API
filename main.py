@@ -1,8 +1,11 @@
 #!/usr/bin/python3.9
 from flask_cors import CORS
+from dotenv import load_dotenv
 from flask import Flask, request
 from flask_socketio import SocketIO, emit
 from question_handler import answer_question
+
+load_dotenv(dotenv_path="./secret/.env")
 
 app = Flask(__name__)
 
