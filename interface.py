@@ -1,7 +1,8 @@
 from abc import ABC, abstractmethod
 
-class Rountine(ABC):
+class Routine(ABC):
 
+    @staticmethod
     @abstractmethod
     def process(self, inp: str, history) -> str:
         return NotImplemented

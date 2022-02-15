@@ -24,7 +24,7 @@ def disconnect(sid):
 @socketio.on("question")
 def question_socket(data):
     print(f"Question asked via socket: \"{data}\"")
-    emit("answer", answer_question(data))
+    emit("answer", answer_question(data, None))
 
 @app.route("/question", methods=["GET"])
 def question_http():

@@ -7,7 +7,7 @@ This is the API to which each of the frontends will make requests
 To run the server locally:
 
 ```bash
-python3.9 server/server.py
+python3.9 server.py
 ```
 
 To build a docker image of the server:
