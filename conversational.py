@@ -20,5 +20,5 @@ class Conversational(Routine):
                 stop=["Friend"]
             )
 
-        return response
+        return response["choices"][0]["text"]
 
