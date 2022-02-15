@@ -1,3 +1,5 @@
+from conversational.conversational import Conversational
+
 def answer_question(question, session_id):
 
     # Load all previous questions & responses from this user

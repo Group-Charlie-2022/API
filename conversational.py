@@ -5,7 +5,7 @@ openai.api_key = open("secret/openai_key").read().strip()
 
 class Conversational(Route):
     
-    def process(self, input):
+    def process(self, inp, history):
         response = openai.Completion.create(
                 engine="text-davinci-001",
                 prompt='Friend: ' + input +'\n'\
