@@ -4,5 +4,5 @@ class Routine(ABC):
 
     @staticmethod
     @abstractmethod
-    def process(self, inp: str, history) -> str:
+    def process(inp: str, history) -> str:
         return NotImplemented
