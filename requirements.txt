@@ -4,3 +4,5 @@ flask_socketio
 openai
 gunicorn
 python-dotenv
+bs4
+lxml
