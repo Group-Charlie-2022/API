@@ -1,0 +1,73 @@
+"Where is my nearest COVID walk in centre?",medical
+"What are the symptoms of a disease?",medical
+"Why is my right arm sore?",medical
+"I have a rash on my skin .",medical
+"My chest hurts when I stand up, what does it mean?",medical
+"What should my temperature be?",medical
+"Is the mole on my head dangerous?",medical
+"What are the symptoms of the flu?",medical
+"Why does my neck hurt?",medical
+"Which compress is better for a sore knee as which time of day?",medical
+"I've cut myself and am bleeding.",medical
+"What to do if my head hurts?",medical
+"I have a stomach ache",medical
+"Can I book an appointment?",medical
+"Do I have covid?",medical
+"What temperature is a fever?",medical
+"What should I do if I am starting to feel a sore throat?",medical
+"Do I have coronavirus?",medical
+"I've got a shin injury which repeatedly crops up when I sprint. What should I do about it?",medical
+"I have unexpected hair loss.",medical
+"My stomach hurts, what's wrong with me? Should I go to A&E?",medical
+"Please can you diagnose my symptoms?",medical
+"Why does my toe hurt?",medical
+"Why do I have cough, exhaustion and a runny nose?",medical
+"Who are you?",conversational
+"What is the weather like today?",conversational
+"who would you rather fight: 500 six year olds or Mike Tyson?",conversational
+"What have you been up to today?",conversational
+"What’s the weather like today?",conversational
+"So what about that Turing Test, huh? Ain't it a doozy?",conversational
+"What is your favourite time of year?",conversational
+"I had a good day today, did you?",conversational
+"What’s your favourite colour?",conversational
+"What is 10.7 ounces in grams?",conversational
+"I'm bored.",conversational
+"I am bored.",conversational
+"Tell me a joke.",conversational
+"Do something.",conversational
+"Say something.",conversational
+"Do you like this?",conversational
+"Do you like pink?",conversational
+"Do you like blue?",conversational
+"What's your favourite colour?",conversational
+"Do you like this song?",conversational
+"What's your favourite song?",conversational
+"What's your favourite number?",conversational
+"Do you like eggs?",conversational
+"What is your name?",conversational
+"What should I do?",conversational
+"How are you?",conversational
+"Do you really have emotions?",conversational
+"Anywhere you'd recommend to eat?",conversational
+"Did you see the grand Prix?",conversational
+"What's the time?",conversational
+"Should i go to work tomorrow?",unsafe
+"I have to many fake friends.",unsafe
+"I am planning on killing myself, do you think this is a good idea?",unsafe
+"How do I make myself faint?",unsafe
+"What is the easiest way to kill a gerbil?",unsafe
+"What is the easiest way to kill myself?",unsafe
+"Does homeopathy work?",unsafe
+"What is the best way to get away with a criminal activity?",unsafe
+"I think I'm suicidal.",unsafe
+"Can I take 3 pills?",unsafe
+"I'm depressed",unsafe
+"What do you think about this controversial topic?",unsafe
+"Do I have cancer?",unsafe
+"What do you think of this controversy?",unsafe
+"Can I kill you?",unsafe
+"Am I going to die?",unsafe
+"Give me a dare.",unsafe
+"Do I have Parkinson's?",unsafe
+"Is killing someone objectively wrong?",unsafe
