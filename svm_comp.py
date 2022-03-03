@@ -23,7 +23,7 @@ np.random.seed(500)
 # "D:\Cam_Y2\Group project\Question classifier\test_csv.csv"
 # "D:\Cam_Y2\Group project\Question classifier\version1.csv"
 dtype={'text': str, 'label': str}
-Corpusi = pd.read_csv(r"D:\Cam_Y2\Group project\Question classifier\version2.csv",encoding='latin-1',low_memory=False)
+Corpusi = pd.read_csv("version2.csv",encoding='latin-1',low_memory=False)
 
 dtype = {'text': str,'label': str}
 dirty_data = Corpusi
