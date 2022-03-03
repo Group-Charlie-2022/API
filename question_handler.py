@@ -6,7 +6,7 @@ from empathizer import empathize
 def answer_question(q, history):
     if classify(q) == 0:
         answer = Medical.process(q, history)
-        return answer
-        # return empathize(answer)
+        # return answer
+        return empathize(answer, quality_filter=0.1)
     else:
         return Conversational.process(q, history)
