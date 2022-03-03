@@ -1,13 +1,10 @@
 import openai
+import os
+from dotenv import load_dotenv
+load_dotenv(dotenv_path="../secret/.env")
 
-openai.api_key = "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"
-
-#print(openai.File.create(file=open("combined_answers.jsonl"), purpose='answers'))
-
-#openai.File.delete("file-mw9jCXDFWjhxmFKSddgAG5AC")
-
-
-
+openai.api_key = os.getenv("OPENAI_KEY")
+print(openai.File.create(file=open("combined_answers.jsonl"), purpose='answers'))
 
 
 print(openai.File.list())
