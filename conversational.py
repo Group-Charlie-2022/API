@@ -8,10 +8,19 @@ class Conversational(Routine):
     
     @staticmethod
     def process(inp, history):
+
+        prompt = ''
+
+        for q, a in history[-5:]:
+            prompt += 'Friend: ' + q + '\n'
+            prompt += 'Empathetic chatbot: ' + a + '\n'
+
+        prompt += 'Friend: ' + inp + '\n'
+        prompt += 'Empathetic chatbot:'
+
         response = openai.Completion.create(
                 engine="text-davinci-001",
-                prompt='Friend: ' + inp +'\n'\
-                        'Empathetic chatbot: ',
+                prompt=prompt,
                 temperature=0.5,
                 max_tokens=60,
                 top_p=1.0,
