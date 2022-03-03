@@ -6,3 +6,4 @@ gunicorn
 python-dotenv
 bs4
 lxml
+dotenv
