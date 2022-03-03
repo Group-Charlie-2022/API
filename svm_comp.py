@@ -95,7 +95,7 @@ predictions_SVM = SVM.predict(Test_X_Tfidf)
 print("SVM Accuracy Score -> ",accuracy_score(predictions_SVM, Test_Y)*100)
 
 
-def classify(input, SVM,Tfidf_vect):
+def classify(input, SVM=SVM,Tfidf_vect=Tfidf_vect):
     tag_map = defaultdict(lambda : wn.NOUN)
     tag_map['J'] = wn.ADJ
     tag_map['V'] = wn.VERB
@@ -116,18 +116,18 @@ def classify(input, SVM,Tfidf_vect):
     return SVM.predict(Test_X_Tfidf)
 
 
-classify("buddy what is up, wanna hang out?",SVM,Tfidf_vect)
-classify("I think I have cancer, I fell pain, I feel unconfortable, pls help",SVM,Tfidf_vect)
-classify("I don't know man, is this machine working? I sure damn hope so.",SVM,Tfidf_vect)
-inner = ""
-while(inner != "stop"):
-    print("please enter a question")
-    inner = input()
-    response = classify(inner,SVM,Tfidf_vect)
-    if(response==0):
-        print("medical question")
-    else:
-        print("casual question")
-    print()
+# classify("buddy what is up, wanna hang out?",SVM,Tfidf_vect)
+# classify("I think I have cancer, I fell pain, I feel unconfortable, pls help",SVM,Tfidf_vect)
+# classify("I don't know man, is this machine working? I sure damn hope so.",SVM,Tfidf_vect)
+# inner = ""
+# while(inner != "stop"):
+#     print("please enter a question")
+#     inner = input()
+#     response = classify(inner,SVM,Tfidf_vect)
+#     if(response==0):
+#         print("medical question")
+#     else:
+#         print("casual question")
+#     print()
 
 
