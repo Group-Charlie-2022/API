@@ -2,12 +2,14 @@
 from dotenv import load_dotenv
 load_dotenv(dotenv_path="./secret/.env")
 
+import os
 from flask_cors import CORS
 from flask import Flask, request, session
 from flask_socketio import SocketIO, emit
 from question_handler import answer_question
 
 app = Flask(__name__)
+app.secret_key = os.getenv("SESSION_KEY")
 
 CORS(app)
 socketio = SocketIO(app, cors_allowed_origins="*")
@@ -27,7 +29,7 @@ def disconnect(sid):
 @socketio.on("question")
 def question_socket(data):
     print(f"Question asked via socket: \"{data}\"")
-    if not session["history"]:
+    if "history" not in session:
         session["history"] = []
     history = session["history"]
     answer = answer_question(data, history)
@@ -38,7 +40,7 @@ def question_socket(data):
 def question_http():
     q = request.args.get("q")
     print(f"Question asked via http: \"{q}\"")
-    if not session["history"]:
+    if "history" not in session:
         session["history"] = []
     history = session["history"]
     answer = answer_question(q, history)
@@ -46,4 +48,4 @@ def question_http():
     return answer
 
 if __name__ == '__main__':
-      app.run(host='0.0.0.0', port=3000)
+    app.run(host='0.0.0.0', port=3000)
