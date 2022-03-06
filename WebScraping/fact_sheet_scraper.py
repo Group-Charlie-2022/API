@@ -42,18 +42,42 @@ def run():
                     else:
                         if sibling.name == 'p':
                             paragraphs.append(sibling.text)
+                        elif sibling.name == 'ul':
+                            list_item_texts = []
+                            for list_item in sibling.find_all('li'):
+                                list_item_texts.append(f' -{list_item.text}')
+                            paragraphs.append("".join(list_item_texts))
+
                 if not paragraphs:
                     continue
-                formed_text = " ".join(paragraphs)
-                chunks = [formed_text[i:i + CHUNK_SIZE] for i in range(0, len(formed_text), CHUNK_SIZE)]
+
+                chunks = []
+                current_chunk = []
+                current_chunk_length = 0
+
+                for i, paragraph in enumerate(paragraphs):
+                    current_chunk.append(paragraph)
+                    current_chunk_length+=len(paragraph)
+
+                    if current_chunk_length > CHUNK_SIZE/2 or i == len(paragraphs)-1:
+                        chunks.append(" ".join(current_chunk))
+                        current_chunk = []
+                        current_chunk_length = 0
+
                 for chunk in chunks:
                     #if it is not the first line, write a newline before it
+                    if not chunk:
+                        continue
+
                     if count_of_written_lines != 0:
                         outfile.write('\n')
+
                     json.dump({"text":chunk}, outfile)
                     count_of_written_lines+=1
 
 
     outfile.close()
     print("Written "+ str(count_of_written_lines) + " lines to health_topic_chunked.jsonl")
+
+
 
