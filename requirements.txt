@@ -7,3 +7,8 @@ python-dotenv
 bs4
 lxml
 dotenv
+nltk
+pandas
+numpy
+sklearn
+transformers
