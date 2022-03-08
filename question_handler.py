@@ -27,6 +27,6 @@ def answer_question(q, history):
         log.info('classified as conversational')
         answer = Conversational.process(q, history)
     else:
-        answer = "UNSAFE"
+        answer = "I'm sorry, I don't think I can help with that. Please contact a medical professional if you need help."
     log.info('answering: ' + answer)
     return answer

@@ -25,7 +25,6 @@ def answer_question(question, session_id):
 
     return empathize(question_type, response)
 
-
 def get_symptom_checker_response(question, history):
     # Get a list of all of the symptoms the user has, based on everything they've said so far
     symptoms = []
