@@ -357,3 +357,89 @@ Traceback (most recent call last):
   File "c:\users\gbt50\appdata\local\programs\python\python39\lib\site-packages\flask\sessions.py", line 97, in _fail
     raise RuntimeError(
 RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+[2022-03-08 11:27:44,265] {wasyncore.py:485} INFO - Serving on http://0.0.0.0:8080
+[2022-03-08 11:29:11,727] {wasyncore.py:485} INFO - Serving on http://0.0.0.0:3000
+[2022-03-08 11:29:33,270] {app.py:1457} ERROR - Exception on /question [GET]
+Traceback (most recent call last):
+  File "C:\Users\btara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\btara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\btara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\btara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\btara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\btara\PycharmProjects\GroupProject\Empathetic-Chatbot\main.py", line 44, in question_http
+    session["history"] = []
+  File "C:\Users\btara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+[2022-03-08 11:32:43,028] {wasyncore.py:485} INFO - Serving on http://0.0.0.0:3000
+[2022-03-08 11:32:55,100] {app.py:1457} ERROR - Exception on /question [GET]
+Traceback (most recent call last):
+  File "C:\Users\btara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\btara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\btara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+  File "C:\Users\btara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\btara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Users\btara\PycharmProjects\GroupProject\Empathetic-Chatbot\main.py", line 44, in question_http
+    session["history"] = []
+  File "C:\Users\btara\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.8_qbz5n2kfra8p0\LocalCache\local-packages\Python38\site-packages\flask\sessions.py", line 97, in _fail
+    raise RuntimeError(
+RuntimeError: The session is unavailable because no secret key was set.  Set the secret_key on the application to something unique and secret.
+[2022-03-08 11:35:40,816] {wasyncore.py:485} INFO - Serving on http://0.0.0.0:3000
+[2022-03-08 11:36:15,385] {question_handler.py:19} INFO - answering question: Hi
+[2022-03-08 11:36:15,394] {question_handler.py:23} INFO - classified as medical
+[2022-03-08 11:36:15,429] {util.py:57} INFO - message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files
+[2022-03-08 11:36:15,430] {util.py:50} DEBUG - api_version=None data=None message='Post details'
+[2022-03-08 11:36:15,431] {retry.py:351} DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[2022-03-08 11:36:15,436] {connectionpool.py:1001} DEBUG - Starting new HTTPS connection (1): api.openai.com:443
+[2022-03-08 11:36:16,559] {connectionpool.py:456} DEBUG - https://api.openai.com:443 "GET /v1/files HTTP/1.1" 200 307
+[2022-03-08 11:36:16,561] {util.py:57} INFO - message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=599 response_code=200
+[2022-03-08 11:36:16,600] {util.py:57} INFO - message='Request to OpenAI API' method=post path=https://api.openai.com/v1/answers
+[2022-03-08 11:36:16,601] {util.py:50} DEBUG - api_version=None data='{"search_model": "ada", "model": "curie", "question": "Friend: Hi\\nEmpathetic chatbot:", "file": "file-UUredUF79HQENoF8azfuAfhe", "examples_context": "Question: Who is most at risk of severe illness from COVID-19? Answer: People aged 60 years and over, and those with underlying medical problems like high blood pressure, heart and lung problems, diabetes, obesity or cancer, are at higher risk of developing serious illness. Hepatitis A is an inflammation of the liver caused by the hepatitis A virus (HAV). The virus is primarily spread when an uninfected (and unvaccinated) person ingests food or water that is contaminated with the faeces of an infected person. Epilepsy is not contagious. Although many underlying disease mechanisms can lead to epilepsy, the cause of the disease is still unknown in about 50% of cases globally.", "examples": [["Friend: What has the most risk from getting COVID?", "People aged 60 years and over, and those with underlying medical problems like high blood pressure, heart and lung problems, diabetes, obesity or cancer."], ["Friend: What is hepatitis?", "Hepatitis A is an inflammation of the liver caused by the hepatitis A virus (HAV). The virus is primarily spread when an uninfected (and unvaccinated) person ingests food or water that is contaminated with the faeces of an infected person."], ["Friend: YOOOO CAN I SPREAD EPILEPSY TO OTHERS??????", "No, you cannot spread epilepsy to others as epilepsy is not contagious. Although many underlying disease mechanisms can lead to epilepsy, the cause of the disease is still unknown in about half of the cases globally."], ["Friend: HEEEEY CAN I DO SOMETHING TO AVOID GETTING A BURULI ULCER? PLEASEEE", "There are currently no primary preventive measures for Buruli ulcer. The mode of transmission is not known."]], "max_rerank": 10, "max_tokens": 200, "stop": ["\\n", "<|endoftext|>"]}' message='Post details'
+[2022-03-08 11:36:23,270] {connectionpool.py:456} DEBUG - https://api.openai.com:443 "POST /v1/answers HTTP/1.1" 200 7307
+[2022-03-08 11:36:23,380] {util.py:57} INFO - message='OpenAI API response' path=https://api.openai.com/v1/answers processing_ms=6173 response_code=200
+[2022-03-08 11:36:24,616] {question_handler.py:31} INFO - answering: Hi, I would like to say hello.
+[2022-03-08 11:38:12,572] {question_handler.py:19} INFO - answering question: what is covid
+[2022-03-08 11:38:12,585] {question_handler.py:27} INFO - classified as conversational
+[2022-03-08 11:38:12,585] {util.py:57} INFO - message='Request to OpenAI API' method=post path=https://api.openai.com/v1/engines/text-davinci-001/completions
+[2022-03-08 11:38:12,586] {util.py:50} DEBUG - api_version=None data='{"prompt": "Friend: Hi\\nEmpathetic chatbot: Hi, I would like to say hello.\\nFriend: what is covid\\nEmpathetic chatbot:", "temperature": 0.5, "max_tokens": 60, "top_p": 1.0, "frequency_penalty": 0.5, "presence_penalty": 0.0, "stop": ["Friend"]}' message='Post details'
+[2022-03-08 11:38:12,587] {retry.py:351} DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[2022-03-08 11:38:12,591] {connectionpool.py:1001} DEBUG - Starting new HTTPS connection (1): api.openai.com:443
+[2022-03-08 11:38:16,142] {connectionpool.py:456} DEBUG - https://api.openai.com:443 "POST /v1/engines/text-davinci-001/completions HTTP/1.1" 200 None
+[2022-03-08 11:38:16,144] {util.py:57} INFO - message='OpenAI API response' path=https://api.openai.com/v1/engines/text-davinci-001/completions processing_ms=2135 response_code=200
+[2022-03-08 11:38:16,145] {question_handler.py:31} INFO - answering:  Covid-19 is a novel coronavirus that was first identified in 2019.
+[2022-03-08 11:39:23,965] {question_handler.py:19} INFO - answering question: what is an ulcer
+[2022-03-08 11:39:23,973] {question_handler.py:23} INFO - classified as medical
+[2022-03-08 11:39:23,974] {util.py:57} INFO - message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files
+[2022-03-08 11:39:23,975] {util.py:50} DEBUG - api_version=None data=None message='Post details'
+[2022-03-08 11:39:23,976] {retry.py:351} DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[2022-03-08 11:39:23,979] {connectionpool.py:1001} DEBUG - Starting new HTTPS connection (1): api.openai.com:443
+[2022-03-08 11:39:24,986] {connectionpool.py:456} DEBUG - https://api.openai.com:443 "GET /v1/files HTTP/1.1" 200 307
+[2022-03-08 11:39:24,987] {util.py:57} INFO - message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=507 response_code=200
+[2022-03-08 11:39:24,988] {util.py:57} INFO - message='Request to OpenAI API' method=post path=https://api.openai.com/v1/answers
+[2022-03-08 11:39:24,989] {util.py:50} DEBUG - api_version=None data='{"search_model": "ada", "model": "curie", "question": "Friend: Hi\\nEmpathetic chatbot: Hi, I would like to say hello.\\nFriend: what is an ulcer\\nEmpathetic chatbot:", "file": "file-UUredUF79HQENoF8azfuAfhe", "examples_context": "Question: Who is most at risk of severe illness from COVID-19? Answer: People aged 60 years and over, and those with underlying medical problems like high blood pressure, heart and lung problems, diabetes, obesity or cancer, are at higher risk of developing serious illness. Hepatitis A is an inflammation of the liver caused by the hepatitis A virus (HAV). The virus is primarily spread when an uninfected (and unvaccinated) person ingests food or water that is contaminated with the faeces of an infected person. Epilepsy is not contagious. Although many underlying disease mechanisms can lead to epilepsy, the cause of the disease is still unknown in about 50% of cases globally.", "examples": [["Friend: What has the most risk from getting COVID?", "People aged 60 years and over, and those with underlying medical problems like high blood pressure, heart and lung problems, diabetes, obesity or cancer."], ["Friend: What is hepatitis?", "Hepatitis A is an inflammation of the liver caused by the hepatitis A virus (HAV). The virus is primarily spread when an uninfected (and unvaccinated) person ingests food or water that is contaminated with the faeces of an infected person."], ["Friend: YOOOO CAN I SPREAD EPILEPSY TO OTHERS??????", "No, you cannot spread epilepsy to others as epilepsy is not contagious. Although many underlying disease mechanisms can lead to epilepsy, the cause of the disease is still unknown in about half of the cases globally."], ["Friend: HEEEEY CAN I DO SOMETHING TO AVOID GETTING A BURULI ULCER? PLEASEEE", "There are currently no primary preventive measures for Buruli ulcer. The mode of transmission is not known."]], "max_rerank": 10, "max_tokens": 200, "stop": ["\\n", "<|endoftext|>"]}' message='Post details'
+[2022-03-08 11:39:29,390] {connectionpool.py:456} DEBUG - https://api.openai.com:443 "POST /v1/answers HTTP/1.1" 200 6981
+[2022-03-08 11:39:29,392] {util.py:57} INFO - message='OpenAI API response' path=https://api.openai.com/v1/answers processing_ms=4273 response_code=200
+[2022-03-08 11:39:31,484] {question_handler.py:31} INFO - answering: An ulcer is a sore or soreness in the lining of the stomach or intestines.
+[2022-03-08 11:40:16,661] {question_handler.py:19} INFO - answering question: what are the types of it?
+[2022-03-08 11:40:16,673] {question_handler.py:23} INFO - classified as medical
+[2022-03-08 11:40:16,674] {util.py:57} INFO - message='Request to OpenAI API' method=get path=https://api.openai.com/v1/files
+[2022-03-08 11:40:16,675] {util.py:50} DEBUG - api_version=None data=None message='Post details'
+[2022-03-08 11:40:16,675] {retry.py:351} DEBUG - Converted retries value: 2 -> Retry(total=2, connect=None, read=None, redirect=None, status=None)
+[2022-03-08 11:40:16,678] {connectionpool.py:1001} DEBUG - Starting new HTTPS connection (1): api.openai.com:443
+[2022-03-08 11:40:17,949] {connectionpool.py:456} DEBUG - https://api.openai.com:443 "GET /v1/files HTTP/1.1" 200 307
+[2022-03-08 11:40:17,952] {util.py:57} INFO - message='OpenAI API response' path=https://api.openai.com/v1/files processing_ms=485 response_code=200
+[2022-03-08 11:40:17,953] {util.py:57} INFO - message='Request to OpenAI API' method=post path=https://api.openai.com/v1/answers
+[2022-03-08 11:40:17,953] {util.py:50} DEBUG - api_version=None data='{"search_model": "ada", "model": "curie", "question": "Friend: Hi\\nEmpathetic chatbot: Hi, I would like to say hello.\\nFriend: what are the types of it?\\nEmpathetic chatbot:", "file": "file-UUredUF79HQENoF8azfuAfhe", "examples_context": "Question: Who is most at risk of severe illness from COVID-19? Answer: People aged 60 years and over, and those with underlying medical problems like high blood pressure, heart and lung problems, diabetes, obesity or cancer, are at higher risk of developing serious illness. Hepatitis A is an inflammation of the liver caused by the hepatitis A virus (HAV). The virus is primarily spread when an uninfected (and unvaccinated) person ingests food or water that is contaminated with the faeces of an infected person. Epilepsy is not contagious. Although many underlying disease mechanisms can lead to epilepsy, the cause of the disease is still unknown in about 50% of cases globally.", "examples": [["Friend: What has the most risk from getting COVID?", "People aged 60 years and over, and those with underlying medical problems like high blood pressure, heart and lung problems, diabetes, obesity or cancer."], ["Friend: What is hepatitis?", "Hepatitis A is an inflammation of the liver caused by the hepatitis A virus (HAV). The virus is primarily spread when an uninfected (and unvaccinated) person ingests food or water that is contaminated with the faeces of an infected person."], ["Friend: YOOOO CAN I SPREAD EPILEPSY TO OTHERS??????", "No, you cannot spread epilepsy to others as epilepsy is not contagious. Although many underlying disease mechanisms can lead to epilepsy, the cause of the disease is still unknown in about half of the cases globally."], ["Friend: HEEEEY CAN I DO SOMETHING TO AVOID GETTING A BURULI ULCER? PLEASEEE", "There are currently no primary preventive measures for Buruli ulcer. The mode of transmission is not known."]], "max_rerank": 10, "max_tokens": 200, "stop": ["\\n", "<|endoftext|>"]}' message='Post details'
+[2022-03-08 11:40:20,436] {connectionpool.py:456} DEBUG - https://api.openai.com:443 "POST /v1/answers HTTP/1.1" 200 7351
+[2022-03-08 11:40:20,441] {util.py:57} INFO - message='OpenAI API response' path=https://api.openai.com/v1/answers processing_ms=2334 response_code=200
+[2022-03-08 11:40:21,168] {question_handler.py:31} INFO - answering: The types of it are:
