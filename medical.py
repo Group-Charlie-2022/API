@@ -1,16 +1,22 @@
-from interface import Routine
-from WebScraping import file_uploader
-import openai
 import os
-
+import openai
+from WebScraping import file_uploader
+from interface import Routine
 from prompting import build_prompt
+
 
 openai.api_key = os.getenv("OPENAI_KEY")
 
 class Medical(Routine):
-    
+    '''
+    Medical question handling routine.
+    '''
+
     @staticmethod
     def process(inp, history):
+        '''
+        Processes the question as defined in Routine assuming it's medical.
+        '''
         response = openai.Answer.create(
             search_model="ada",
             model="curie",
@@ -31,4 +37,3 @@ class Medical(Routine):
         )
 
         return response["answers"][0]
-
