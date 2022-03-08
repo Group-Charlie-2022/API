@@ -7,18 +7,7 @@ This is the API to which each of the frontends will make requests
 To run the server locally:
 
 ```bash
-python3.9 server.py
-```
-
-To build a docker image of the server:
-
-```bash
-docker build -t group-project-api .
-```
-
-To run that docker image:
-```bash
-docker run -p 3000:3000 -it group-project-api
+gunicorn wsgi:app
 ```
 
 ## Making requests to the server
