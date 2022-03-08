@@ -3,6 +3,7 @@ flask_cors
 flask_socketio
 openai
 gunicorn
+waitress
 python-dotenv
 bs4
 lxml

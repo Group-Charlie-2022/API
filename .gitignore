@@ -3,3 +3,5 @@ secret/
 .idea/
 logs/*
 venv/
+
+!secret/*.example

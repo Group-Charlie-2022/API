@@ -4,6 +4,15 @@ A discord bot to take messages from a discord channel and send them to the API
 
 ## Running the client
 
+Installation steps:
+
+```bash
+npm install
+cp ./env/secret.env.example ./env/secret.env
+```
+
+Then, replace the `CLIENT_TOKEN` value in `env/secret.env` with your Discord Client Token.
+
 The following command will run the bot locally, and the bot will find the question server running at `http://localhost:3000`
 ```bash
 npm run local
