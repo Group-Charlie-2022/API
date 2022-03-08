@@ -30,11 +30,10 @@ dirty_data = Corpusi
 row_count = len(dirty_data.index)
 med_data = dirty_data[dirty_data["label"] == 'medical']
 #dirty_data = dirty_data.sample(n = 1500)
-dirty_data = dirty_data[dirty_data["label"] == 'conversational']
 unsafe_data = dirty_data[dirty_data["label"] == 'unsafe']
-new_data = pd.concat([dirty_data,med_data,unsafe_data])
-Corpus = new_data.sample(frac = 1).reset_index(drop=True)
-is_list = type(Corpus['text'].head().iloc[0])
+conv_data = dirty_data[dirty_data["label"] == 'conversational']
+new_data = pd.concat([conv_data,med_data,unsafe_data])
+Corpus = new_data.reset_index(drop=True)
 print("clean data complete")
 
 
