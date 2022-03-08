@@ -1,0 +1,27 @@
+{
+  "name": "webclient",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "local": "cross-env LOCAL=1 node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Group-Charlie-2022/WebClient.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Group-Charlie-2022/WebClient/issues"
+  },
+  "homepage": "https://github.com/Group-Charlie-2022/WebClient#readme",
+  "dependencies": {
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}

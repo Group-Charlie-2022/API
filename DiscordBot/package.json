@@ -1,0 +1,28 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "local": "cross-env LOCAL=1 node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Group-Charlie-2022/DiscordBot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Group-Charlie-2022/DiscordBot/issues"
+  },
+  "homepage": "https://github.com/Group-Charlie-2022/DiscordBot#readme",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "discord.js": "^13.6.0",
+    "dotenv": "^14.3.2"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3"
+  }
+}
