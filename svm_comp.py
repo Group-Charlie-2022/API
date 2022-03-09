@@ -101,7 +101,7 @@ Tfidf_vect = load('Tfidf_vect.joblib')
 
 
 def classify(input, SVM=SVM,Tfidf_vect=Tfidf_vect):
-    print(input)
+    # print(input)
     tag_map = defaultdict(lambda : wn.NOUN)
     tag_map['J'] = wn.ADJ
     tag_map['V'] = wn.VERB
@@ -118,10 +118,10 @@ def classify(input, SVM=SVM,Tfidf_vect=Tfidf_vect):
             Final_words.append(word_Final)
     # The final processed set of words for each iteration will be stored in 'text_final'
     Test_X_Tfidf = Tfidf_vect.transform([str(Final_words)])
-    print(SVM.predict_proba(Test_X_Tfidf))
+    # print(SVM.predict_proba(Test_X_Tfidf))
     return SVM.predict(Test_X_Tfidf)
 
-# classify("buddy what is up, wanna hang out?",SVM,Tfidf_vect)
+# print(classify("buddy what is up, wanna hang out?",SVM,Tfidf_vect))
 # classify("I think I have cancer, I fell pain, I feel unconfortable, pls help",SVM,Tfidf_vect)
 # classify("I don't know man, is this machine working? I sure damn hope so.",SVM,Tfidf_vect)
 # inner = ""

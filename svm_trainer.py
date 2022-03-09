@@ -83,7 +83,8 @@ Test_X_Tfidf = Tfidf_vect.transform(Test_X)
 
 # Classifier - Algorithm - SVM
 # fit the training dataset on the classifier
-SVM = svm.SVC(C=1.0, kernel='linear', degree=3, gamma='auto',probability=True)
+# SVM = svm.SVC(C=1.0, kernel='linear', degree=3, gamma='auto',probability=True)
+SVM = svm.SVC(C=1.0, kernel='linear', degree=3, gamma='auto')
 SVM.fit(Train_X_Tfidf,Train_Y)
 
 # predict the labels on validation dataset
@@ -93,3 +94,28 @@ print("SVM Accuracy Score -> ",accuracy_score(predictions_SVM, Test_Y)*100)
 
 dump(SVM,'SVM.joblib')
 dump(Tfidf_vect,'Tfidf_vect.joblib')
+
+'''
+def classify(input, SVM=SVM,Tfidf_vect=Tfidf_vect):
+    print(input)
+    tag_map = defaultdict(lambda : wn.NOUN)
+    tag_map['J'] = wn.ADJ
+    tag_map['V'] = wn.VERB
+    tag_map['R'] = wn.ADV
+    in_tokens = word_tokenize(input)
+    Final_words = []
+    # Initializing WordNetLemmatizer()
+    word_Lemmatized = WordNetLemmatizer()
+    # pos_tag function below will provide the 'tag' i.e if the word is Noun(N) or Verb(V) or something else.
+    for word, tag in pos_tag(in_tokens):
+        # Below condition is to check for Stop words and consider only alphabets
+        if word not in stopwords.words('english') and word.isalpha():
+            word_Final = word_Lemmatized.lemmatize(word,tag_map[tag[0]])
+            Final_words.append(word_Final)
+    # The final processed set of words for each iteration will be stored in 'text_final'
+    Test_X_Tfidf = Tfidf_vect.transform([str(Final_words)])
+    print(SVM.predict_proba(Test_X_Tfidf))
+    return SVM.predict(Test_X_Tfidf)
+
+print(classify("buddy what is up, wanna hang out?",SVM,Tfidf_vect))
+'''
