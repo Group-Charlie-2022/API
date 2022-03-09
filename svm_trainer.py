@@ -1,17 +1,17 @@
-#import pandas as pd
+import pandas as pd
 import numpy as np
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk import pos_tag
 from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
-#from sklearn.preprocessing import LabelEncoder
+from sklearn.preprocessing import LabelEncoder
 from collections import defaultdict
 from nltk.corpus import wordnet as wn
-#from sklearn.feature_extraction.text import TfidfVectorizer
-#from sklearn import model_selection, naive_bayes, svm
-#from sklearn.metrics import accuracy_score
-from joblib import load #,dump
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn import model_selection, naive_bayes, svm
+from sklearn.metrics import accuracy_score
+from joblib import dump #, load
 
 nltk.download('punkt')
 nltk.download('wordnet')
@@ -20,7 +20,6 @@ nltk.download('averaged_perceptron_tagger')
 
 
 np.random.seed(500)
-'''
 dtype={'text': str, 'label': str}
 Corpusi = pd.read_csv("version2.csv",encoding='latin-1',low_memory=False)
 
@@ -28,7 +27,6 @@ dtype = {'text': str,'label': str}
 dirty_data = Corpusi
 row_count = len(dirty_data.index)
 med_data = dirty_data[dirty_data["label"] == 'medical']
-#dirty_data = dirty_data.sample(n = 1500)
 unsafe_data = dirty_data[dirty_data["label"] == 'unsafe']
 conv_data = dirty_data[dirty_data["label"] == 'conversational']
 new_data = pd.concat([conv_data,med_data,unsafe_data])
@@ -85,7 +83,7 @@ Test_X_Tfidf = Tfidf_vect.transform(Test_X)
 
 # Classifier - Algorithm - SVM
 # fit the training dataset on the classifier
-SVM = svm.SVC(C=1.0, kernel='linear', degree=3, gamma='auto')
+SVM = svm.SVC(C=1.0, kernel='linear', degree=3, gamma='auto',probability=True)
 SVM.fit(Train_X_Tfidf,Train_Y)
 
 # predict the labels on validation dataset
@@ -94,45 +92,4 @@ predictions_SVM = SVM.predict(Test_X_Tfidf)
 print("SVM Accuracy Score -> ",accuracy_score(predictions_SVM, Test_Y)*100)
 
 dump(SVM,'SVM.joblib')
-'''
-SVM = load('SVM.joblib')
-Tfidf_vect = load('Tfidf_vect.joblib')
-
-
-
-def classify(input, SVM=SVM,Tfidf_vect=Tfidf_vect):
-    print(input)
-    tag_map = defaultdict(lambda : wn.NOUN)
-    tag_map['J'] = wn.ADJ
-    tag_map['V'] = wn.VERB
-    tag_map['R'] = wn.ADV
-    in_tokens = word_tokenize(input)
-    Final_words = []
-    # Initializing WordNetLemmatizer()
-    word_Lemmatized = WordNetLemmatizer()
-    # pos_tag function below will provide the 'tag' i.e if the word is Noun(N) or Verb(V) or something else.
-    for word, tag in pos_tag(in_tokens):
-        # Below condition is to check for Stop words and consider only alphabets
-        if word not in stopwords.words('english') and word.isalpha():
-            word_Final = word_Lemmatized.lemmatize(word,tag_map[tag[0]])
-            Final_words.append(word_Final)
-    # The final processed set of words for each iteration will be stored in 'text_final'
-    Test_X_Tfidf = Tfidf_vect.transform([str(Final_words)])
-    print(SVM.predict_proba(Test_X_Tfidf))
-    return SVM.predict(Test_X_Tfidf)
-
-# classify("buddy what is up, wanna hang out?",SVM,Tfidf_vect)
-# classify("I think I have cancer, I fell pain, I feel unconfortable, pls help",SVM,Tfidf_vect)
-# classify("I don't know man, is this machine working? I sure damn hope so.",SVM,Tfidf_vect)
-# inner = ""
-# while(inner != "stop"):
-#     print("please enter a question")
-#     inner = input()
-#     response = classify(inner,SVM,Tfidf_vect)
-#     if(response==0):
-#         print("medical question")
-#     else:
-#         print("casual question")
-#     print()
-
-
+dump(Tfidf_vect,'Tfidf_vect.joblib')
